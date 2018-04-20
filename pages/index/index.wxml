@@ -1,0 +1,79 @@
+<!--index.wxml-->
+<view class="swiper-tab">
+  <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">地图</view>
+  <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">警局</view>
+  <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">报警</view>
+  <view class="swiper-tab-list {{currentTab==3? 'on' : ''}}" data-current="3" bindtap="swichNav">消息</view>
+  <view class="swiper-tab-list {{currentTab==4? 'on' : ''}}" data-current="4" bindtap="swichNav">设置</view>
+</view>
+
+<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">
+
+  <swiper-item>
+    <map id="map" class='tabContent' longitude="{{longitude}}" latitude="{{latitude}}" scale="{{scale}}" controls="{{controls}}" bindcontroltap="controltap" markers="{{mapmarkers}}"   show-location style="width: 100%;height: 100%;"></map>
+  </swiper-item>
+
+  <swiper-item>
+    <block wx:for="{{policeStationList}}">
+      <view class="addressCell" bindtap="doPoliceStationSelect" data-id="{{index}}">
+
+        <view class="address">
+           <text>{{item.title}}</text>        
+        </view>
+
+        <view class="detail">
+         <text>{{item.address}}</text>
+        </view>
+        <view class="tel">
+        <text>{{item.tel}}</text>
+        </view>
+      </view>
+    </block>
+  </swiper-item>
+
+  <swiper-item>
+    
+  <view class=" padding: 20rpx 0;">
+  <view class="display: flex;  flex-direction: column;  align-items: center;  width: 100%;">
+    <camera device-position="back" flash="off" binderror="error" style="width: 100%; height: 200px;"></camera>
+    <view class="btn-area">
+      <button type="default" bindtap="takePhoto">拍照</button>
+    </view>
+    <!--<view class="btn-area">
+      <button type="default" bindtap="startRecord">开始录像</button>
+    </view>
+    <view class="btn-area">
+      <button type="default" bindtap="stopRecord">结束录像</button>
+    </view>-->
+    <view class="section">
+  <textarea bindinput='inputAlarmContent'  class='txtArlarmContent' auto-height placeholder="报警内容描述" />
+</view>
+     <view class="btn-area">
+      <button type="primary" bindtap="submitAlarm">提交数据</button>
+    </view>
+     
+    <image wx:if="{{picture}}" mode="widthFix" src="{{picture}}"></image>
+    <video wx:if="{{video}}" class="video" src="{{video}}"></video>
+  </view>
+</view>
+  </swiper-item>
+  <swiper-item>
+    <block wx:for="{{newsList}}">
+    <view class='newsCell' bindtap='doShowNewsDetail' data-id="{{index}}">
+    <text>{{item.NewsTitle}}</text>
+    </view>
+    </block>
+
+    <icon type="success"  size="50" class="freshButton" bindtap="onNewsFreshClick"/>
+  </swiper-item>
+  <swiper-item>
+   <view class='section'> 
+   <input class='lineInput' placeholder='登录电话' bindinput='loginCellPhone' value='{{cellphone}}' disabled='true'>{{cellphone}}</input>
+    <input class='lineInput' placeholder='请输入姓名' bindinput='setLoginName'  value='{{userName}}'></input>
+     <input class='lineInput' placeholder='请输入家庭地址' bindinput='setHomeAddress'  value='{{homeAddress}}'></input>
+      <input class='lineInput' placeholder='应急联系人电话号码' bindinput='setEmerCellphone'  value='{{emerCellphone}}'></input>
+      <button type="primary" bindtap='btnSaveSetting' >保存设置</button>
+   </view>
+   <text>{{userId}}</text>
+  </swiper-item>
+</swiper>

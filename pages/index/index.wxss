@@ -1,0 +1,92 @@
+/**index.wxss**/  
+.swiper-tab{  
+    width: 100%;  
+    border-bottom: 2rpx solid #777777;  
+    text-align: center;  
+    line-height: 80rpx;
+    height: 20%;
+    }  
+.swiper-tab-list{  font-size: 30rpx;  
+    display: inline-block;  
+    width: 20%;  
+    color: #777777;  
+}  
+.on{ color: #da7c0c;  
+    border-bottom: 5rpx solid #da7c0c;}  
+  
+.swiper-box{ display: block; height: 100%; width: 100%; overflow: hidden; }  
+.swiper-box view{  
+    text-align: center;  
+} 
+.tabContent
+{
+  height: 80%;
+}
+
+.addressCell{
+  background-color: white;
+  padding: 10rpx 20rpx 10rpx 20rpx;
+  margin-bottom: 5rpx;
+  border-bottom: 1px #777777 solid;
+  text-align: left;
+
+}
+.detail text{
+  font-size: 27rpx;
+  color: #666666;
+  text-align: left;
+}
+.tel text
+{
+  font-size: 27rpx;
+  color: #666666;
+   text-align: left;
+}
+
+.newsCell
+{
+  background-color: white;
+  padding: 10rpx 20rpx 10rpx 20rpx;
+  margin-bottom: 5px;
+  border-bottom: 1px #777777 solid;
+  text-align: left;
+  align-content: left;
+  display: flex;
+
+}
+
+.freshButton {
+    float: right;
+    background-color: #ffffff;
+    position: fixed;
+    bottom: 20px;
+    right: 10px;  
+    border: 0 solid #ffffff;
+    border-radius: 500px;
+    box-shadow: 4px 1px 1px #cccccc;
+
+}
+
+.lineInput
+{
+  margin: 10px;
+  border:1px solid #cccccc ;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.btn-area {
+  margin-top: 60rpx;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 30rpx;
+}
+.txtArlarmContent
+{
+   margin: 10px;
+   width: 100%;
+   height: 90px;
+  border:1px solid #cccccc ;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}

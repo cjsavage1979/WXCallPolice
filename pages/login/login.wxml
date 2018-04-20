@@ -1,0 +1,12 @@
+<view class="container">  
+ <image style="width: 100px; height: 100px;margin-bottom:50px;" mode="{{item.mode}}" src="../../imgs/police_hat.png"></image>
+  <view class='form'>  
+    <text class="appName">{{appName}}</text>  
+    <input class='lineInput' placeholder='请输入手机号' bindinput='cellphoneInput'></input>
+     <input class='lineInput' placeholder='请输入密码' password="true" bindinput='passwordInput'></input>
+     
+    <button bindtap="logIn" type="primary"  >登录</button>  
+   <button bindtap="register" type="default"  >注册</button>  
+  </view>  
+</view> 
+ 

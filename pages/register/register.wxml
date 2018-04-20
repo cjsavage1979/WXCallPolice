@@ -1,0 +1,12 @@
+<view class="container">  
+ 
+  <view class='form'>  
+    <text class="appName">用户注册</text>  
+    <input class='lineInput' placeholder='请输入手机号' bindinput='cellphoneInput'></input>
+     <input class='lineInput' placeholder='请输入密码' password="true" bindinput='passwordInput'></input>
+       <input class='lineInput' placeholder='再次确认密码' password="true" bindinput='repasswordInput'></input>
+      <button bindtap="register" type="primary"  >注册</button>  
+    <button bindtap="logIn" type="default"  >登录</button>  
+  
+  </view>  
+</view> 

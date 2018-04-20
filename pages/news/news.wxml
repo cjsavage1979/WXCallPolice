@@ -1,0 +1,5 @@
+<view style='section;flex-direction:column;'>
+<text class='title'>{{NewsTitle}}</text>
+<text class='content'>{{NewsContent}}</text>
+</view>
+
